@@ -1,21 +1,26 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Gloria+Hallelujah&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import 'react-datepicker/dist/react-datepicker.css';
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.triangle {
+  position: absolute;
+  top: 40px;  /* Adjust to align with badge */
+  left: -10px; /* Move outward */
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #010009; /* Black Triangle */
+  transform: rotate(45deg); /* Rotates to match your design */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.swiper{
+  padding: 0 15px !important;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
