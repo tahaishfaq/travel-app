@@ -5,7 +5,7 @@ import { Tab } from "@headlessui/react";
 import { FaCalendarAlt } from "react-icons/fa";
 import DatePicker from "react-datepicker";
 
-export default function HeroSection() {
+export default function HomeHeroSection() {
   const [selectedTab, setSelectedTab] = useState("Domestic");
   const [selectedDate, setSelectedDate] = useState(null);
   const [location, setLocation] = useState("Lonavala, Maharashtra");

@@ -4,35 +4,38 @@ import { FaFacebookF, FaTwitter } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#14213D] text-white relative">
-      {/* <div className="bg-[#F7A836] py-4 px-6 flex justify-between items-center rounded-md mx-10 -mb-6 relative">
-        <div>
-          <h2 className="text-lg font-semibold">
+    <footer className="bg-[#14213D] text-white relative mt-12">
+        <div className="absolute inset-x-0 -top-12">
+      <div className="bg-[#FCA311] rounded-[10px] px-10 py-8 mx-auto max-w-7xl flex items-center justify-between">
+        <div className="">
+          <h2 className="text-[24px] font-medium">
             Still Confused? Need help with anything contact us.
           </h2>
-          <p className="text-sm">
+          <p className="text-xs">
             Our dedicated customer support team is available 24/7 to assist you
             with any inquiries, booking changes, or travel-related questions.
           </p>
         </div>
-        <button className="bg-white text-[#FF3131] px-4 py-2 rounded-lg font-medium shadow-md">
+        <button className="bg-white text-[#FF3131] text-sm px-[20px] py-2.5 rounded-[3px] font-medium">
           Contact Us
         </button>
-      </div> */}
+      </div>
+      </div>
 
       <div className="max-w-7xl mx-auto py-48 ">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-20 items-start">
           <div className="space-y-2">
-            <div className="flex items-center space-x-2">
-              <span className="text-white font-bold text-lg">👜</span>
-              <h2 className="text-xl font-semibold">Logo</h2>
+            <div className="flex items-center">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF3131] to-[#FF914D] text-2xl font-bold">
+                👜 Logo
+              </span>
             </div>
             <p className="text-sm">
               "Discover the World with Lorem - Your Passport to Unforgettable
               Journeys!"
             </p>
           </div>
-          
+
           <div className="space-y-4 pl-10">
             <h3 className="text-lg font-medium">Quick Links</h3>
             <ul className="space-y-3 text-sm">

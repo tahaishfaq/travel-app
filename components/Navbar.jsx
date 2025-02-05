@@ -9,11 +9,11 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-0 lg:px-0 md:px-2">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <div className="flex items-center">
+          <Link href="/" className="flex items-center">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF3131] to-[#FF914D] text-2xl font-bold">
               👜 Logo
             </span>
-          </div>
+          </Link>
 
           {/* Menu Items */}
           <div className="hidden md:flex space-x-8">

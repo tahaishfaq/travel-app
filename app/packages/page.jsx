@@ -2,12 +2,12 @@ import BlogSection from "@/components/Blog";
 import FixedDepartures from "@/components/FixedDepartures";
 import Footer from "@/components/Footer";
 import Gallery from "@/components/Gallery";
-import HeroSection from "@/components/HomeHeroSection";
 import Navbar from "@/components/Navbar";
-import TopDestinations from "@/components/TopDestinations";
-import Image from "next/image";
+import PackagesHeroSection from "@/components/PackagesHeroSection";
+import TopPackages from "@/components/TopPackages";
+import React from "react";
 
-export default function Home() {
+const Packages = () => {
   const destinationsData = [
     {
       id: 1,
@@ -44,33 +44,20 @@ export default function Home() {
   ];
 
   return (
-    <>
+    <div>
       <Navbar />
-      <HeroSection />
-      <div className="pt-32">
-        <TopDestinations />
-      </div>
-      <div>
-        <FixedDepartures
-          title="Fixed Departures"
-          description="Handpicked Getaways for Every Traveler"
-          destinations={destinationsData}
-        />
-      </div>
-      <div>
-        <FixedDepartures
-          title="Speciality Tours"
-          description="Handpicked Getaways for Every Traveler"
-          destinations={destinationsData}
-        />
-      </div>
-      <div>
-        <Gallery/>
-      </div>
-      <div>
-        <BlogSection/>
-      </div>
-      <Footer/>
-    </>
+      <PackagesHeroSection />
+      <TopPackages />
+      <Gallery />
+      <BlogSection />
+      <FixedDepartures
+        title="Fixed Departures"
+        description="Handpicked Getaways for Every Traveler"
+        destinations={destinationsData}
+      />
+      <Footer />
+    </div>
   );
-}
+};
+
+export default Packages;
