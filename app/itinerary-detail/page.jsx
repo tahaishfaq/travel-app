@@ -3,8 +3,10 @@ import Footer from "@/components/Footer";
 import Carousel from "@/components/ItineraryDetail/Carousel";
 import Overview from "@/components/ItineraryDetail/Overview";
 import Pricing from "@/components/ItineraryDetail/Pricing";
+import Stay from "@/components/ItineraryDetail/Stay";
 import Summary from "@/components/ItineraryDetail/Summary";
 import TopHeader from "@/components/ItineraryDetail/TopHeader";
+import Transfers from "@/components/ItineraryDetail/Transfers";
 import Navbar from "@/components/Navbar";
 
 const ItineraryDetail = () => {
@@ -19,7 +21,8 @@ const ItineraryDetail = () => {
       <Overview/>
       <Summary/>
       <Pricing/>
-     
+     <Stay/>
+     <Transfers />
     </div>
     <Footer/>
     </>
