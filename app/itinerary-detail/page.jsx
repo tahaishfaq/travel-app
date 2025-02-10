@@ -1,6 +1,7 @@
 'use client'
 import Footer from "@/components/Footer";
 import Carousel from "@/components/ItineraryDetail/Carousel";
+import DayWise from "@/components/ItineraryDetail/DayWise";
 import Overview from "@/components/ItineraryDetail/Overview";
 import Pricing from "@/components/ItineraryDetail/Pricing";
 import Stay from "@/components/ItineraryDetail/Stay";
@@ -23,6 +24,7 @@ const ItineraryDetail = () => {
       <Pricing/>
      <Stay/>
      <Transfers />
+     <DayWise />
     </div>
     <Footer/>
     </>

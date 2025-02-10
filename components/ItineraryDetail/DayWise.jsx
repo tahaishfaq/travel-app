@@ -1,47 +1,83 @@
 import React from "react";
 
+const ItineraryCard = ({ day, highlight, descriptions }) => {
+  return (
+    <div className="w-full bg-white rounded-2xl border border-opacity-10 p-6 relative">
+      {/* Card Header */}
+      <div className="flex items-center gap-x-3 border-b pb-6 border-opacity-10 mb-6">
+        <button className="px-6 py-3 text-white rounded-lg bg-gradient-to-r from-[#FF3131] to-[#FF914D]">
+          {day}
+        </button>
+        <h3 className="text-xl font-normal text-[#000929]">{highlight}</h3>
+      </div>
+
+      {/* Timeline Content */}
+      <div className="relative">
+        {descriptions?.map((description, idx) => (
+          <div key={idx} className="relative flex gap-x-4">
+            {/* Vertical Line */}
+            <div
+              className={`absolute left-0 top-0 flex w-6 justify-center ${
+                idx === descriptions.length - 1 ? 'h-6' : 'h-full'
+              }`}
+            >
+              {/* <div className="w-px bg-gray-200" /> */}
+              <div className="w-px border-l border-dashed border-[#FF507A]" />
+            </div>
+
+            {/* Timeline Dot */}
+            <div className="relative flex h-6 w-6 flex-none items-center justify-center bg-white">
+              <div className="h-5 w-5 bg-gradient-to-r from-[#FF3131] to-[#FF914D] rounded-full flex items-center justify-center">
+                <div className="h-2 w-2 bg-white rounded-full" />
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="flex-auto pb-6">
+              <p className="text-[#4D525F]">{description}</p>
+              {idx === 0 && (
+                <img
+                  src="https://images.pexels.com/photos/1450354/pexels-photo-1450354.jpeg"
+                  alt="Highlight"
+                  className="w-full h-[280px] object-cover object-center rounded-lg mt-4"
+                />
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const DayWise = () => {
   const itinerary = [
     {
       day: "Day 1-2",
       highlight: "Highlight-1",
-      description:
-        "Embark on an unforgettable journey with our carefully crafted itinerary. Begin with a seamless airport transfer to the enchanting town of Ubud, where you'll experience the breathtaking Tegenungan Waterfall, the lush Tegalalang Rice Fields, and the playful Ubud Monkey Forest. Delight in an exhilarating swing adventure at Aloha, offering stunning views, and explore the vibrant Ubud Village. On the third day, discover the majestic Handra Gate and the iconic Tanah Lot temple before settling into you...",
-      image: "https://via.placeholder.com/800x400", // Replace with actual image URL
+      descriptions: [
+        "Embark on an unforgettable journey with our carefully crafted itinerary...",
+        "Discover the majestic Handra Gate and the iconic Tanah Lot temple...",
+        "Continue your journey with visits to the sacred Uluwatu Temple..."
+      ]
     },
     {
-      day: "Day 2",
-      highlight: "Highlight-2",
-      description:
-        "Embark on an unforgettable journey with our carefully crafted itinerary. Begin with a seamless airport transfer to the enchanting town of Ubud, where you'll experience the breathtaking Tegenungan Waterfall, the lush Tegalalang Rice Fields, and the playful Ubud Monkey Forest."
-    },
-    {
-      day: "Day 2",
-      highlight: "Highlight-2",
-      description:
-        "Embark on an unforgettable journey with our carefully crafted itinerary. Begin with a seamless airport transfer to the enchanting town of Ubud, where you'll experience the breathtaking Tegenungan Waterfall, the lush Tegalalang Rice Fields, and the playful Ubud Monkey Forest."
-    },
-    {
-      day: "Day 2",
-      highlight: "Highlight-2",
-      description:
-        "Embark on an unforgettable journey with our carefully crafted itinerary. Begin with a seamless airport transfer to the enchanting town of Ubud, where you'll experience the breathtaking Tegenungan Waterfall, the lush Tegalalang Rice Fields, and the playful Ubud Monkey Forest."
-    }
+        day: "Day 3-4",
+        highlight: "Highlight-2"
+      },
   ];
 
   return (
-    <div className="p-6">
+    <div className="mx-auto max-w-7xl space-y-8 px-4">
       <h2 className="text-3xl font-bold">Day wise Itinerary</h2>
-      <div className="border-l-4 border-red-400 pl-6 mt-6">
-        {itinerary.map((item, index) => (
-          <div key={index} className="relative mb-6 bg-white p-4 rounded-lg shadow-md">
-            <div className="absolute -left-20 bg-red-500 text-white px-4 py-2 rounded-lg font-semibold">{item.day}</div>
-            <h3 className="text-lg font-semibold text-orange-600">{item.highlight}</h3>
-            <p className="text-gray-700 mt-2">{item.description}</p>
-            {item.image && (
-              <img src={item.image} alt={item.highlight} className="w-full h-auto rounded-lg mt-4" />
-            )}
-          </div>
+      <div className="max-w-4xl space-y-4">
+        {itinerary?.map((item, index) => (
+          <ItineraryCard
+            key={index}
+            day={item.day}
+            highlight={item.highlight}
+            descriptions={item.descriptions}
+          />
         ))}
       </div>
     </div>
