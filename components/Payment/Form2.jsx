@@ -6,12 +6,12 @@ const Form2 = () => {
   return (
     <div className="space-y-6 pt-6">
      
-      <div className="bg-white p-6 rounded-2xl">
-        <div className="flex justify-between items-center">
+      <div className="bg-white sm:p-6 p-4 rounded-2xl">
+        <div className="flex sm:flex-row flex-col justify-between sm:items-center">
           <h2 className="text-lg font-semibold text-[#1A1A1A]">
             Payment terms
           </h2>
-          <p className="text-2xl font-bold text-[#1A1A1A]">
+          <p className="sm:text-2xl text-xl font-bold text-[#1A1A1A]">
             ₹87,368 <span className="text-sm font-medium text-gray-500">/2 persons</span>
           </p>
         </div>
@@ -43,7 +43,7 @@ const Form2 = () => {
       </div>
 
 
-      <div className="bg-white p-6 rounded-2xl">
+      <div className="bg-white sm:p-6 p-4 rounded-2xl">
         <h2 className="text-lg font-semibold text-[#1A1A1A]">Cancellation Policy</h2>
 
         

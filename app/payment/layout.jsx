@@ -13,8 +13,8 @@ const PaymentLayout = ({ children }) => {
     
     <div>
       <Navbar />
-      <div className="mx-auto max-w-6xl py-14">
-        <div className="p-5 border border-[#000000] border-opacity-10 rounded-2xl shadow-md bg-white space-y-6">
+      <div className="mx-auto sm:max-w-6xl max-w-7xl sm:py-14 py-0">
+        <div className="sm:p-5 p-4 sm:border border-[#000000] border-opacity-10 rounded-2xl sm:shadow-md bg-white space-y-6">
           <div className="max-w-md space-y-2.5">
             <h1 className="text-2xl font-bold text-start text-[#000929]">
               Complete the following steps to confirm your booking.
@@ -27,7 +27,7 @@ const PaymentLayout = ({ children }) => {
           <StepNavigation/>
 
           <div
-            className="p-6 rounded-xl shadow-sm"
+            className="sm:p-6 p-3 rounded-xl shadow-sm"
             style={{
               background:
                 "linear-gradient(to right, rgba(255, 49, 49, 0.1), rgba(255, 145, 77, 0.1))",

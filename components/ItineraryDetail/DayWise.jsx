@@ -2,20 +2,20 @@ import React from "react";
 
 const ItineraryCard = ({ day, highlight, descriptions }) => {
   return (
-    <div className="w-full bg-white rounded-2xl border border-opacity-10 p-6 relative">
-      {/* Card Header */}
+    <div className="w-full bg-white rounded-2xl border border-opacity-10 sm:p-6 p-4 relative">
+      
       <div className="flex items-center gap-x-3 border-b pb-6 border-opacity-10 mb-6">
-        <button className="px-6 py-3 text-white rounded-lg bg-gradient-to-r from-[#FF3131] to-[#FF914D]">
+        <button className="px-6 py-3 text-white rounded-lg bg-gradient-to-r from-[#FF3131] to-[#FF914D] sm:text-base text-sm">
           {day}
         </button>
         <h3 className="text-xl font-normal text-[#000929]">{highlight}</h3>
       </div>
 
-      {/* Timeline Content */}
+     
       <div className="relative">
         {descriptions?.map((description, idx) => (
           <div key={idx} className="relative flex gap-x-4">
-            {/* Vertical Line */}
+            
             <div
               className={`absolute left-0 top-0 flex w-6 justify-center ${
                 idx === descriptions.length - 1 ? 'h-6' : 'h-full'
@@ -25,14 +25,14 @@ const ItineraryCard = ({ day, highlight, descriptions }) => {
               <div className="w-px border-l border-dashed border-[#FF507A]" />
             </div>
 
-            {/* Timeline Dot */}
+           
             <div className="relative flex h-6 w-6 flex-none items-center justify-center bg-white">
               <div className="h-5 w-5 bg-gradient-to-r from-[#FF3131] to-[#FF914D] rounded-full flex items-center justify-center">
                 <div className="h-2 w-2 bg-white rounded-full" />
               </div>
             </div>
 
-            {/* Content */}
+           
             <div className="flex-auto pb-6">
               <p className="text-[#4D525F]">{description}</p>
               {idx === 0 && (
@@ -68,8 +68,8 @@ const DayWise = () => {
   ];
 
   return (
-    <div className="mx-auto max-w-7xl space-y-8 px-4">
-      <h2 className="text-3xl font-bold">Day wise Itinerary</h2>
+    <div className="mx-auto max-w-7xl sm:space-y-8 space-y-6 sm:px-0 px-4 pb-8">
+      <h2 className="sm:text-3xl text-2xl font-bold">Day wise Itinerary</h2>
       <div className="max-w-4xl space-y-4">
         {itinerary?.map((item, index) => (
           <ItineraryCard

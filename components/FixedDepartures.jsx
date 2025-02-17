@@ -5,15 +5,15 @@ import { FaPlane, FaHotel } from "react-icons/fa";
 
 export default function FixedDepartures({ title, description, destinations }) {
   return (
-    <div className="max-w-7xl mx-auto py-16">
+    <div className="max-w-7xl mx-auto sm:py-16 py-8">
       {/* Section Header */}
-      <div className="text-start space-y-2.5">
+      <div className="text-start sm:space-y-2.5 space-y-1 sm:px-0 px-4">
         <h2 className="text-[36px] font-bold text-[#0A0A0A]">{title}</h2>
-        <p className="text-[#0A0A0A] text-[16px]">{description}</p>
+        <p className="text-[#0A0A0A] sm:text-[16px] text-sm">{description}</p>
       </div>
 
       {/* Swiper Carousel */}
-      <div className="relative mt-8">
+      <div className="relative sm:pt-10 pt-8">
         <Swiper
           spaceBetween={20}
           slidesPerView={1}

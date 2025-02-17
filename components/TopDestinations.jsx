@@ -76,13 +76,13 @@ export default function TopDestinations() {
   const swiperRef = useRef(null);
 
   return (
-    <div className="max-w-7xl mx-auto py-20 relative ">
-      <div className="flex justify-between items-center">
-        <div className="text-start space-y-2.5">
+    <div className="max-w-7xl mx-auto sm:py-20 pt-40 pb-8 relative ">
+      <div className="flex justify-between items-center sm:px-0 px-4">
+        <div className="text-start sm:space-y-2.5 space-y-1">
           <h2 className="text-[36px] font-bold text-[#0A0A0A]">
             Top Destinations
           </h2>
-          <p className="text-[#0A0A0A] text-[16px]">
+          <p className="text-[#0A0A0A] sm:text-[16px] text-sm">
             Handpicked Getaways for Every Traveler
           </p>
         </div>
@@ -102,7 +102,7 @@ export default function TopDestinations() {
         </div>
       </div>
 
-      <div className="relative pt-32">
+      <div className="relative sm:pt-32 pt-16">
         <Swiper
           modules={[Navigation]}
           spaceBetween={20}

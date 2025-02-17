@@ -4,7 +4,7 @@ export default function PackagesHeroSection() {
   
 
   return (
-    <div className="relative h-[536px] flex flex-col justify-center items-center text-center ">
+    <div className="relative sm:h-[536px] h-[450px] flex flex-col justify-center items-center text-center ">
       
       <div
         className="absolute inset-0 bg-cover bg-center"
@@ -14,11 +14,11 @@ export default function PackagesHeroSection() {
       </div>
 
       
-      <div className="relative z-10 max-w-xl mx-auto text-white">
+      <div className="relative z-10 sm:max-w-xl max-w-md mx-auto text-white">
         <h1 className="text-4xl md:text-5xl font-medium px-2">
           Country Images
         </h1>
-        <p className="mt-6 text-lg">
+        <p className="sm:mt-6 mt-4 text-lg sm:max-w-xl max-w-xs">
         the content of the country description goes here
         </p>
       </div>

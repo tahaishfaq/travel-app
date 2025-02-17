@@ -5,7 +5,7 @@ const TripSummary = () => {
   return (
     <>
       <div
-        className="p-6 rounded-xl shadow-sm"
+        className="sm:p-6 p-4 rounded-xl shadow-sm"
         style={{
           background:
             "linear-gradient(to right, rgba(255, 49, 49, 0.1), rgba(255, 145, 77, 0.1))",
@@ -20,24 +20,24 @@ const TripSummary = () => {
         <div className="pt-6 space-y-3">
           <h3 className="text-lg font-semibold">Overview</h3>
           <div className="bg-white border border-[#032125] border-opacity-10 rounded-lg space-y-2.5 divide-y divide-[#032125] divide-opacity-10">
-            <div className="text-[16px]  px-4 py-3">
+            <div className="sm:text-[16px] text-sm px-4 py-3">
               <p className="font-medium">Visiting:</p>
               <p className="text-[#4D525F]">
                 Bali Thrills & Serenity: A Perfect Blend of Adventure and
                 Relaxation
               </p>
             </div>
-            <div className="text-[16px]  px-4 py-3">
+            <div className="sm:text-[16px] text-sm px-4 py-3">
               <p className="font-medium">Departing:</p>
               <p className="text-[#4D525F]">January 15, 2025 from Bengaluru</p>
             </div>
-            <div className="text-[16px]  px-4 py-3">
+            <div className="sm:text-[16px] text-sm px-4 py-3">
               <p className="font-medium">Inclusions:</p>
               <p className="text-[#4D525F]">
                 2 Hotels, 2 Transfers, 4 Activities, 1 Visa, 1 Insurance
               </p>
             </div>
-            <div className="text-[16px]  px-4 py-3">
+            <div className="sm:text-[16px] text-sm px-4 py-3">
               <p className="font-medium">Travellers:</p>
               <p className="text-[#4D525F]">2 adults</p>
             </div>
@@ -52,7 +52,7 @@ const TripSummary = () => {
                 <div className="h-6 w-6 bg-[#FEEDED] rounded-full flex items-center justify-center">
                   <div className="h-2.5 w-2.5 bg-[#FC4343] rounded-full" />
                 </div>
-                <div className="text-[16px]">
+                <div className="sm:text-[16px] text-sm">
                   <p className="font-medium">Day {day}</p>
                   <p className="text-[#4D525F]">
                     {day === 1

@@ -13,14 +13,15 @@ const Form3 = () => {
 
   return (
     <div className="space-y-6 pt-6">
-      <div className="flex items-start gap-4">
-        <div className="bg-white p-4 rounded-2xl shadow-sm max-w-[600px] w-full space-y-4">
+      <div className="flex sm:flex-row flex-col items-start gap-4">
+      <div className="bg-white p-4 rounded-2xl shadow-sm max-w-full sm:max-w-[600px] w-full space-y-4">
+          {/* Personal Details */}
           <div className="space-y-3">
             <h2 className="text-lg font-semibold text-[#333848]">
               Personal Details
             </h2>
             <div className="border rounded-xl p-6 space-y-6">
-              <div className="flex items-center justify-between">
+              <div className="flex flex-wrap justify-between gap-3 sm:gap-0">
                 <div className="flex items-center gap-x-2">
                   <FaUser className="text-[#FF3131]" />
                   <span className="text-sm text-[#4D525F]">
@@ -29,12 +30,12 @@ const Form3 = () => {
                 </div>
                 <div className="flex items-center gap-x-2">
                   <FaEnvelope className="text-[#FF3131]" />
-                  <span className="text-sm text-[#4D525F]">
+                  <span className="text-sm text-[#4D525F] truncate">
                     rajdeepsarkar794@gmail.com
                   </span>
                 </div>
               </div>
-              <div className="flex items-center justify-between">
+              <div className="flex flex-wrap justify-between gap-3 sm:gap-0">
                 <div className="flex items-center gap-x-2">
                   <FaPhone className="text-[#FF3131]" />
                   <span className="text-sm text-[#4D525F]">06003568105</span>
@@ -47,13 +48,14 @@ const Form3 = () => {
             </div>
           </div>
 
+          {/* Payment Details */}
           <div className="space-y-3">
             <h2 className="text-lg font-semibold text-[#1A1A1A]">
               Payment Details
             </h2>
 
-            <div className="mt-4 border rounded-xl overflow-hidden">
-              <table className="w-full">
+            <div className="mt-4 border rounded-xl overflow-x-auto">
+              <table className="w-full min-w-[300px]">
                 <thead className="bg-gray-100 text-gray-600 text-sm">
                   <tr>
                     <th className="text-left px-4 py-3">Details</th>
@@ -78,6 +80,7 @@ const Form3 = () => {
             </div>
           </div>
         </div>
+
 
         <div className="flex-1 space-y-4">
           <div className="p-[2px] rounded-2xl bg-gradient-to-r from-[#FF3131] to-[#FF914D]">

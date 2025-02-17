@@ -46,18 +46,20 @@ const Overview = () => {
   ];
 
   return (
-    <div className="mx-auto max-w-7xl flex items-start gap-x-10 pt-20">
+    <div className="mx-auto max-w-7xl flex sm:flex-row flex-col items-start gap-x-10 gap-y-10 sm:pt-20 pt-12 sm:px-0 px-4">
       <div className="space-y-6">
-        <div className="space-y-6">
-          <h2 className="text-3xl font-bold text-[#0A0A0A]">Trip Overview</h2>
+        <div className="sm:space-y-6 space-y-4">
+          <h2 className="sm:text-3xl text-2xl font-bold text-[#0A0A0A]">
+            Trip Overview
+          </h2>
           <div
-            className="p-6 rounded-[16px]"
+            className="sm:p-6 p-4 rounded-[16px]"
             style={{
               background:
                 "linear-gradient(90deg, #f4eefb 0%,   #fdfaf6 40%,  #f4eefb 100%)",
             }}
           >
-            <div className="bg-[#FAFFDB] px-4 py-2.5 rounded-md font-medium inline-flex items-center gap-2 border border-[#000000] border-opacity-15">
+            <div className="bg-[#FAFFDB] px-4 py-2.5 rounded-md sm:text-base text-sm font-medium inline-flex items-center gap-2 border border-[#000000] border-opacity-15">
               <img
                 src="https://images.pexels.com/photos/1483053/pexels-photo-1483053.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                 alt="icon"
@@ -68,7 +70,7 @@ const Overview = () => {
               7 Days
             </div>
 
-            <p className="text-[16px] text-[#4D525F] mt-4">
+            <p className="sm:text-[16px] text-sm text-[#4D525F] mt-4">
               Embark on an unforgettable journey with our carefully crafted
               itinerary. Begin with a seamless airport transfer to the
               enchanting town of Ubud, where you'll experience the breathtaking
@@ -82,10 +84,12 @@ const Overview = () => {
           </div>
         </div>
 
-        <div className="space-y-6">
-          <h2 className="text-3xl font-bold mt-8">Why Choose Us?</h2>
+        <div className="sm:space-y-6 space-y-4">
+          <h2 className="sm:text-3xl text-2xl font-bold mt-8">
+            Why Choose Us?
+          </h2>
           <div
-            className="p-10 rounded-[16px] relative space-y-8"
+            className="sm:p-10 p-5 rounded-[16px] relative space-y-8"
             style={{
               background:
                 "linear-gradient(90deg, #f4eefb 0%, #fdfaf6 40%, #f4eefb 100%)",
@@ -95,7 +99,7 @@ const Overview = () => {
               (feature, index) =>
                 index % 2 === 0 && (
                   <div key={index} className="flex items-center gap-x-8">
-                    <div className="space-y-2 text-center md:text-left">
+                    <div className="space-y-2 text-left">
                       <span
                         className="w-6 h-6 rounded-full flex items-center justify-center"
                         style={{ backgroundColor: feature.color }}
@@ -114,7 +118,7 @@ const Overview = () => {
                     </div>
 
                     {/* Vertical line centered */}
-                    <div className="flex flex-col items-center">
+                    <div className="sm:flex hidden flex-col items-center">
                       <div
                         className="w-0.5 h-40 rounded-full hidden md:block"
                         style={{
@@ -125,7 +129,7 @@ const Overview = () => {
                     </div>
 
                     {features[index + 1] && (
-                      <div className="space-y-2 text-center md:text-left">
+                      <div className="space-y-2 text-left">
                         <span
                           className="w-6 h-6 rounded-full flex items-center justify-center"
                           style={{ backgroundColor: features[index + 1].color }}
@@ -154,22 +158,19 @@ const Overview = () => {
 
       <div className="w-full space-y-6">
         <div className="max-w-md mx-auto border rounded-b-lg">
-          {/* Gradient Header */}
           <div className="relative p-6 rounded-t-lg overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-r from-[#FF3131] to-[#FF914D] opacity-25"></div>
             <div className="relative z-10 text-center text-[#222222] space-y-1.5">
               <h3 className="text-lg font-normal">
                 Want to Go For An Amazing Holiday?
               </h3>
-              <p className="text-xs text-[#323232] font-medium">
+              <p className="text-xs  text-[#323232] font-medium">
                 Provide Your Details to Know Best Holiday Deals
               </p>
             </div>
           </div>
 
-          {/* Form Section */}
-          <div className="p-6 space-y-4">
-            {/* Package Name */}
+          <div className="sm:p-6 p-4 space-y-4">
             <div className="space-y-1.5">
               <label className="block text-sm font-medium">Package Name</label>
               <input
@@ -180,8 +181,7 @@ const Overview = () => {
               />
             </div>
 
-            {/* Counter Section */}
-            <div className="flex gap-x-4">
+            <div className="flex sm:flex-nowrap flex-wrap gap-4">
               {[
                 { label: "Adult", value: adults, setValue: setAdults },
                 { label: "Child", value: children, setValue: setChildren },
@@ -212,8 +212,7 @@ const Overview = () => {
               ))}
             </div>
 
-            {/* Name & Email Fields */}
-            <div className="flex space-x-2.5">
+            <div className="flex sm:flex-row flex-col gap-2.5">
               <div className="space-y-1.5">
                 <label className="block text-sm font-medium">Your Name</label>
                 <input
@@ -232,7 +231,6 @@ const Overview = () => {
               </div>
             </div>
 
-            {/* Contact Number */}
             <div className="space-y-1.5">
               <label className="block text-sm font-medium">Your Number</label>
               <div className="flex">
@@ -247,7 +245,6 @@ const Overview = () => {
               </div>
             </div>
 
-            {/* Submit Button */}
             <button className="w-full bg-gradient-to-r from-[#FF3131] to-[#FF914D] text-white p-3 rounded-full text-base font-normal">
               SEND QUERY
             </button>

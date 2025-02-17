@@ -65,10 +65,10 @@ export default function Gallery() {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-r from-[#FF3131] to-[#FF914D]">
-      <div className="max-w-7xl mx-auto space-y-2">
+    <section className="sm:py-20 py-10 bg-gradient-to-r from-[#FF3131] to-[#FF914D]">
+      <div className="max-w-7xl mx-auto sm:space-y-2.5 space-y-1 sm:px-0 px-4">
         <h1 className="text-4xl font-bold text-[#0A0A0A]">Our Gallery</h1>
-        <p className="text-white text-[14px]">
+        <p className="text-white sm:text-[16px] text-sm">
           Handpicked Getaways for Every Traveler
         </p>
         <div className="relative pt-10">
@@ -96,7 +96,7 @@ export default function Gallery() {
                     ref={(el) => (videoRefs.current[index] = el)}
                     src={video.url}
                     controls
-                    className="w-full h-[430px] object-cover rounded-xl"
+                    className="w-full sm:h-[430px] h-[340px] object-cover rounded-xl"
                     // poster={video.thumbnail}
                     onPlay={() => setPlayingVideos((prev) => ({ ...prev, [index]: true }))}
                     onPause={() => setPlayingVideos((prev) => ({ ...prev, [index]: false }))}
@@ -125,16 +125,16 @@ export default function Gallery() {
               </SwiperSlide>
             ))}
           </Swiper>
-          {/* Custom Navigation Buttons */}
+          
           <button
             onClick={handlePrev}
-            className="absolute -left-8 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white border-4 border-white p-3 rounded-full shadow-lg cursor-pointer hover:scale-110 transition-transform z-10"
+            className="block absolute  sm:-left-8 -left-3 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white border-4 border-white sm:p-3 p-1.5 rounded-full shadow-lg cursor-pointer hover:scale-110 transition-transform z-10"
           >
             <IoIosArrowRoundBack className="w-5 h-5" />
           </button>
           <button
             onClick={handleNext}
-            className="absolute -right-8 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white border-4 border-white p-3 rounded-full shadow-lg cursor-pointer hover:scale-110 transition-transform z-10"
+            className="block absolute   sm:-right-8 -right-3 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white border-4 border-white sm:p-3 p-1.5 rounded-full shadow-lg cursor-pointer hover:scale-110 transition-transform z-10"
           >
             <IoIosArrowRoundForward className="w-5 h-5" />
           </button>

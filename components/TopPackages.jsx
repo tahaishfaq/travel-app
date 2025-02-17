@@ -87,17 +87,16 @@ const packages = [
 
 export default function TopPackages() {
   return (
-    <section className="max-w-7xl mx-auto py-32">
-      <div className="text-[#0A0A0A] space-y-2.5">
+    <section className="max-w-7xl mx-auto sm:py-32 py-20 sm:px-0 px-4">
+      <div className="text-[#0A0A0A] sm:space-y-2.5 space-y-1">
         <h2 className="text-3xl font-bold text-[32px]">Top Packages</h2>
-        <p className="text-[#0A0A0A] text-[16px]">
+        <p className="text-[#0A0A0A] text-sm sm:text-[16px]">
           Handpicked Getaways for Every Traveler
         </p>
       </div>
 
-      <div className="grid grid-cols-12 gap-6 pt-16">
-        <div className="col-span-3 space-y-6">
-          {/* Price Filter */}
+      <div className="grid grid-cols-12 gap-6 sm:pt-16 pt-12">
+        <div className="sm:col-span-3 col-span-12 space-y-6">
           <div className="space-y-4">
             <h3 className="text-2xl font-medium">Price</h3>
             <div className="space-y-2.5">
@@ -118,7 +117,6 @@ export default function TopPackages() {
             </div>
           </div>
 
-          {/* Star Rating Filter */}
           <div className="space-y-4">
             <h3 className="text-2xl font-medium">Star Rating</h3>
             <div className="space-y-2">
@@ -137,23 +135,26 @@ export default function TopPackages() {
           </div>
         </div>
 
-        <div className="col-span-9">
+        <div className="sm:col-span-9 col-span-12">
           <div className="space-y-4">
             {packages.map((pkg) => (
               <div
                 key={pkg.id}
-                className="flex bg-white border border-[#FF507A] p-[10px] rounded-lg border-opacity-25"
+                className="bg-white border border-[#FF507A] p-[10px] rounded-lg border-opacity-25 flex flex-col sm:flex-row"
               >
-                <div className="max-w-[388px]">
+                {/* Package Image */}
+                <div className="w-full sm:w-[388px] h-[200px] sm:h-auto">
                   <img
                     src={pkg.image}
                     alt={pkg.name}
                     className="w-full h-full object-cover rounded-xl"
                   />
                 </div>
-                <div className="px-4 flex-1 space-y-2">
+
+                {/* Package Info */}
+                <div className="sm:px-4 px-1 flex-1 sm:space-y-2 space-y-3 pt-3 sm:pt-0">
                   <h3 className="text-2xl font-medium">{pkg.name}</h3>
-                  <div className="flex items-center space-x-2.5 text-gray-600 text-sm">
+                  <div className="flex flex-wrap items-center gap-2 sm:gap-2.5 text-gray-600 text-sm">
                     <span className="flex items-center gap-x-2.5 font-medium">
                       {pkg.rating}
                       <FaStar className="text-[#4D525F]" />
@@ -169,65 +170,46 @@ export default function TopPackages() {
                     </span>
                   </div>
 
-                  <div className="flex items-center gap-2 flex-wrap">
-                    <span className="text-xs text-[#1E1E1E] px-10 py-2 rounded-full bg-[#31C48D] bg-opacity-40 flex items-center gap-x-1.5">
-                      <img
-                        src="/icons/Square Meters.png"
-                        alt="icon"
-                        className="w-5 h-5"
-                      />{" "}
-                      15,000 Sq Ft
-                    </span>
-                    <span className="text-xs text-[#1E1E1E] px-5 py-2 rounded-full bg-[#F5E9FE] flex items-center gap-x-1.5">
-                      <img
-                        src="/icons/Square Meters.png"
-                        alt="icon"
-                        className="w-5 h-5"
-                      />{" "}
-                      15,000 Sq Ft
-                    </span>
-                    <span className="text-xs text-[#1E1E1E] px-10 py-2 rounded-full bg-[#FFD4B9]  flex items-center gap-x-1.5">
-                      <img
-                        src="/icons/Square Meters.png"
-                        alt="icon"
-                        className="w-5 h-5"
-                      />{" "}
-                      15,000 Sq Ft
-                    </span>
-                    <span className="text-xs text-[#1E1E1E] px-5 py-2 rounded-full bg-[#E3EEFF]  flex items-center gap-x-1.5">
-                      <img
-                        src="/icons/Square Meters.png"
-                        alt="icon"
-                        className="w-5 h-5"
-                      />{" "}
-                      15,000 Sq Ft
-                    </span>
+                  {/* Highlights */}
+                  <div className="flex flex-wrap gap-2">
+                    {["#31C48D", "#F5E9FE", "#FFD4B9", "#E3EEFF"].map(
+                      (bg, i) => (
+                        <span
+                          key={i}
+                          className={`text-xs text-[#1E1E1E] px-5 py-2 rounded-full bg-[${bg}] flex items-center gap-x-1.5`}
+                        >
+                          <img
+                            src="/icons/Square Meters.png"
+                            alt="icon"
+                            className="w-5 h-5"
+                          />{" "}
+                          15,000 Sq Ft
+                        </span>
+                      )
+                    )}
                   </div>
 
+                  {/* Included Features */}
                   <div className="space-y-1.5 pt-1">
-                    <h5 className="text-xs text-[#4D525F]">INCLUDES:</h5> 
+                    <h5 className="text-xs text-[#4D525F]">INCLUDES:</h5>
                     <p className="text-[14px] text-[#4D525F] font-medium">
-                    {pkg.includes.join(", ")}
+                      {pkg.includes.join(", ")}
                     </p>
                   </div>
 
-                  <div className="flex justify-end gap-x-2.5 items-center pt-2 border-t border-[#E8EAF8]">
-                    <p className="text-[18px] font-bold text-[#21242C]">{pkg.price}</p><span>/ couple</span>
-                    <button className="bg-gradient-to-r from-[#FF3131] to-[#FF914D] text-white text-lg font-semibold px-6 py-2 rounded-lg">
+                  {/* Price & CTA */}
+                  <div className="flex flex-row justify-end gap-2.5 items-center pt-2 border-t border-[#E8EAF8]">
+                    <p className="text-[18px] font-bold text-[#21242C]">
+                      {pkg.price}
+                    </p>
+                    <span>/ couple</span>
+                    <button className="bg-gradient-to-r from-[#FF3131] to-[#FF914D] text-white sm:text-base text-sm font-semibold sm:px-6 px-4 py-2  rounded-lg">
                       View Details
                     </button>
                   </div>
                 </div>
               </div>
             ))}
-
-            {/* Navigation Buttons */}
-            {/* <button className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black text-white p-3 rounded-full shadow-lg">
-              <FaArrowLeft />
-            </button>
-            <button className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black text-white p-3 rounded-full shadow-lg">
-              <FaArrowRight />
-            </button> */}
           </div>
         </div>
       </div>

@@ -28,9 +28,9 @@ const Carousel = () => {
     );
   };
   return (
-    <div className="relative max-w-7xl mx-auto mt-6">
-      <div className="relative overflow-hidden rounded-lg shadow-lg">
-        <div className="aspect-[20/9]">
+    <div className="relative max-w-7xl mx-auto mt-6 sm:px-0 px-4">
+      <div className="relative overflow-hidden rounded-lg shadow-lg ">
+        <div className="sm:aspect-[20/9] aspect-[20/12]">
           <img
             src={images[currentIndex]}
             alt="Bali Tour"
@@ -39,24 +39,24 @@ const Carousel = () => {
         </div>
         <button
           onClick={prevSlide}
-          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg"
+          className="absolute sm:left-4 left-2 top-1/2 transform -translate-y-1/2 bg-white sm:p-2 p-1 rounded-full shadow-lg"
         >
           <FaChevronLeft className="text-gray-700" />
         </button>
         <button
           onClick={nextSlide}
-          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg"
+          className="absolute sm:right-4 right-2 top-1/2 transform -translate-y-1/2 bg-white sm:p-2 p-1 rounded-full shadow-lg"
         >
           <FaChevronRight className="text-gray-700" />
         </button>
       </div>
 
-      <div className="flex justify-center space-x-2 mt-4">
+      <div className="flex justify-center sm:space-x-2 space-x-1 mt-4">
         {images.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentIndex(index)}
-            className={`w-16 h-12 rounded-lg shadow-md border-2 ${
+            className={`w-16 sm:h-12 h-10 rounded-lg shadow-md border-2 ${
               index === currentIndex
                 ? "border-orange-500"
                 : "border-transparent"

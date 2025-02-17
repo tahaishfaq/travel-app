@@ -35,7 +35,7 @@ const blogPosts = [
 
 export default function BlogSection() {
   return (
-    <div className="max-w-7xl mx-auto py-16">
+    <div className="max-w-7xl mx-auto sm:py-16 py-12 sm:px-0 px-4">
       <div className="text-start space-y-4">
         <h2 className="text-[36px] font-bold text-[#0A0A0A]">Our Blog</h2>
       </div>

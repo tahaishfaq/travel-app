@@ -11,8 +11,8 @@ export default function HomeHeroSection() {
   const [location, setLocation] = useState("Lonavala, Maharashtra");
 
   return (
-    <div className="relative h-[545px] flex flex-col justify-center items-center text-center ">
-      {/* Background Image */}
+    <div className="relative sm:h-[545px] h-[450px] flex flex-col justify-center items-center text-center ">
+      
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: "url('/images/hero-bg1.jpg')" }}
@@ -20,21 +20,20 @@ export default function HomeHeroSection() {
         <div className="absolute inset-0 bg-black bg-opacity-40"></div>
       </div>
 
-      {/* Hero Content */}
-      <div className="relative z-10 max-w-xl mx-auto text-white">
-        <h1 className="text-4xl md:text-5xl font-medium px-2">
+      
+      <div className="relative z-10 sm:max-w-xl max-w-sm mx-auto text-white">
+        <h1 className="text-4xl sm:text-5xl font-medium px-2">
           Explore the world like never before!
         </h1>
-        <p className="mt-6 text-lg">
+        <p className="sm:mt-6 mt-3 text-lg sm:max-w-xl max-w-xs mx-auto">
           A great platform to buy, sell, or even rent your properties without
           any commissions.
         </p>
       </div>
 
-      {/* Search Box - Floating */}
-      <div className="absolute -bottom-[92px] w-full flex justify-center max-w-6xl mx-auto">
-        <div className="relative z-10 flex flex-col space-y-4 sm:space-y-0 sm:space-x-0 w-[90%] md:w-[80%] lg:w-[60%]">
-          {/* Tabs - Domestic & International */}
+     
+      <div className="absolute sm:-bottom-[92px] bottom-[-55%] w-full flex justify-center max-w-6xl mx-auto sm:px-0 px-4">
+        <div className="relative z-10 flex flex-col space-y-0 sm:space-x-0 w-[100%] md:w-[80%] lg:w-[60%]">
           <div className="flex items-start">
             <Tab.Group>
               <Tab.List className="flex w-full sm:w-auto bg-white shadow-md rounded-t-lg">
@@ -57,11 +56,11 @@ export default function HomeHeroSection() {
             </Tab.Group>
           </div>
 
-          <div className="w-full grid grid-cols-3 bg-white shadow-lg rounded-b-lg p-4 gap-4">
-            <div className="flex flex-col items-start gap-y-1">
+          <div className="w-full grid sm:grid-cols-3 grid-cols-1 bg-white shadow-lg rounded-b-lg p-4 gap-4">
+            <div className="flex flex-col items-start gap-y-1 ">
               <span className="text-xs text-gray-500">Location</span>
               <select
-                className="font-semibold text-black border border-gray-300 rounded-md px-3 py-2 cursor-pointer"
+                className="font-semibold w-full text-black border border-gray-300 rounded-md px-3 py-3 cursor-pointer"
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
               >
@@ -76,7 +75,7 @@ export default function HomeHeroSection() {
             {/* Date Picker */}
             <div className="flex flex-col items-start gap-y-1">
               <span className="text-xs text-gray-500">When</span>
-              <div className="flex items-center border border-gray-300 rounded-md px-3 py-2">
+              <div className="flex items-center border border-gray-300 rounded-md px-3 py-2.5 w-full">
                 <FaCalendarAlt className="text-gray-500" />
                 <DatePicker
                   selected={selectedDate}
